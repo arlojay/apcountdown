@@ -15,7 +15,7 @@ function getTimeRemaining(t) {
 
     time.style.setProperty("--pulseval", (dt % 1000) / 500);
 
-    let [num, dec] = (Math.floor(dt) / 1000).toString().split(".");
+    let [num, dec] = Math.max(0, Math.floor(dt) / 1000).toString().split(".");
     if(dec == null) dec = "0";
 
     if(lastWholeSecond != Math.floor(ct / 1000)) {
