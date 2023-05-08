@@ -1,12 +1,12 @@
 const startTime = Date.now();
 const target = new Date("5/8/2023, 12:35:00 PM").getTime();
+const boomTemplate = new Audio("vine-boom.mp3");
 
 let nextBoomTime = 0;
 let lastWholeSecond = 0;
 
 function numAdvance() {
-    const boom = new Audio("vine-boom.mp3");
-    boom.play();
+    boomTemplate.cloneNode(false).play();
 }
 
 function getTimeRemaining(t) {
