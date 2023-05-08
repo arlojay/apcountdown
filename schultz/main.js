@@ -2,7 +2,7 @@ const startTime = Date.now();
 const relativeTime = "11:00:00 AM"; //4th period
 const time = new Date("1/1/2000, " + relativeTime).toISOString().split("T")[1].slice(0, -1);
 const date = new Date().toISOString().split("T")[0];
-const target = new Date(date + "T" + time + "Z");
+const target = new Date(date + "T" + time + "Z").getTime();
 
 let nextBoomTime = 0;
 let lastWholeSecond = 0;
@@ -18,7 +18,7 @@ function getTimeRemaining(t) {
 
     time.style.setProperty("--pulseval", (dt % 1000) / 500);
 
-    let [num, dec] = (Math.floor(dt) / 1000).toString().split(".");
+    let [num, dec] = Math.max(Math.floor(dt) / 1000, 0).toString().split(".");
     if(dec == null) dec = "0";
 
     if(lastWholeSecond != Math.floor(ct / 1000)) {
