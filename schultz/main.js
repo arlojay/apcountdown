@@ -1,8 +1,8 @@
 const startTime = Date.now();
 const relativeTime = "11:00:00 AM"; //4th period
-const time = new Date("1/1/2000, " + relativeTime).toISOString().split("T")[1].slice(0, -1);
-const date = new Date().toISOString().split("T")[0];
-const target = new Date(date + "T" + time + "Z").getTime();
+const timePart = new Date("1/1/2000, " + relativeTime).toISOString().split("T")[1].slice(0, -1);
+const datePart = new Date().toISOString().split("T")[0];
+const target = new Date(datePart + "T" + timePart + "Z").getTime();
 
 let nextBoomTime = 0;
 let lastWholeSecond = 0;
