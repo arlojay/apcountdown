@@ -3,13 +3,13 @@ const relativeTime = "11:00:00 AM"; //4th period
 const timePart = new Date("1/1/2000, " + relativeTime).toISOString().split("T")[1].slice(0, -1);
 const datePart = new Date().toISOString().split("T")[0];
 const target = new Date(datePart + "T" + timePart + "Z").getTime();
+const boomTemplate = new Audio("/vine-boom.mp3");
 
 let nextBoomTime = 0;
 let lastWholeSecond = 0;
 
 function numAdvance() {
-    const boom = new Audio("/vine-boom.mp3");
-    boom.play();
+    boomTemplate.cloneNode(false).play();
 }
 
 function getTimeRemaining(t) {
