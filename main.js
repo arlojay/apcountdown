@@ -1,5 +1,5 @@
 const startTime = Date.now();
-const target = new Date("5/8/2023, 8:00:00 AM").getTime();
+const target = new Date("5/8/2023, 12:00:00 AM").getTime();
 
 let nextBoomTime = 0;
 let lastWholeSecond = 0;
