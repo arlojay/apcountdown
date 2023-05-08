@@ -8,7 +8,7 @@ let nextBoomTime = 0;
 let lastWholeSecond = 0;
 
 function numAdvance() {
-    const boom = new Audio("vine-boom.mp3");
+    const boom = new Audio("/vine-boom.mp3");
     boom.play();
 }
 
